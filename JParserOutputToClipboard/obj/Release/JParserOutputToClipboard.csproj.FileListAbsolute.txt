@@ -1,0 +1,10 @@
+C:\Users\Seth\RiderProjects\JParserOutputToClipboard\JParserOutputToClipboard\bin\Release\JParserOutputToClipboard.exe.config
+C:\Users\Seth\RiderProjects\JParserOutputToClipboard\JParserOutputToClipboard\bin\Release\JParserOutputToClipboard.exe
+C:\Users\Seth\RiderProjects\JParserOutputToClipboard\JParserOutputToClipboard\bin\Release\JParserOutputToClipboard.pdb
+C:\Users\Seth\RiderProjects\JParserOutputToClipboard\JParserOutputToClipboard\obj\Release\JParserOutputToClipboard.csprojAssemblyReference.cache
+C:\Users\Seth\RiderProjects\JParserOutputToClipboard\JParserOutputToClipboard\obj\Release\JParserOutputToClipboard.Form1.resources
+C:\Users\Seth\RiderProjects\JParserOutputToClipboard\JParserOutputToClipboard\obj\Release\JParserOutputToClipboard.Properties.Resources.resources
+C:\Users\Seth\RiderProjects\JParserOutputToClipboard\JParserOutputToClipboard\obj\Release\JParserOutputToClipboard.csproj.GenerateResource.cache
+C:\Users\Seth\RiderProjects\JParserOutputToClipboard\JParserOutputToClipboard\obj\Release\JParserOutputToClipboard.csproj.CoreCompileInputs.cache
+C:\Users\Seth\RiderProjects\JParserOutputToClipboard\JParserOutputToClipboard\obj\Release\JParserOutputToClipboard.exe
+C:\Users\Seth\RiderProjects\JParserOutputToClipboard\JParserOutputToClipboard\obj\Release\JParserOutputToClipboard.pdb
