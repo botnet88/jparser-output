@@ -12,10 +12,13 @@ namespace JParserOutputToClipboard
     /// </summary>
     public static string getRaw(string input)
     {
-      string parsedText = "";
-      string jParserLoc = String.Format("{0}JParser{1}jparser.exe", UtilsCommon.getAppDir(true), Path.DirectorySeparatorChar);
-      string jParserInputFile = String.Format("{0}JParser{1}jparser_in_{2}.txt", UtilsCommon.getAppDir(true), Path.DirectorySeparatorChar, Guid.NewGuid());
-      string jParserOutputFile = String.Format("{0}JParser{1}jparser_out_{2}.txt", UtilsCommon.getAppDir(true), Path.DirectorySeparatorChar, Guid.NewGuid());
+      var parsedText = "";
+      var runTimeExePath = System.Reflection.Assembly.GetExecutingAssembly().CodeBase;
+      var runTimeDirectory = Path.GetDirectoryName(runTimeExePath)?.Substring(6) + @"\"; // substring removes "file://" from string
+      var jParserDirectory = runTimeDirectory + "JParser";
+      var jParserExePath = jParserDirectory + @"\jparser.exe";
+      var jParserInputFile = $@"{jParserDirectory}\jparser_in_{Guid.NewGuid()}.txt";
+      var jParserOutputFile = $@"{jParserDirectory}\jparser_out_{Guid.NewGuid()}.txt";
 
       // Delete old output file
       File.Delete(jParserOutputFile);
@@ -27,16 +30,15 @@ namespace JParserOutputToClipboard
       }
 
       // Create the jParser arguments
-      string jParserArgs = String.Format(@"{0} {1}",
-        jParserInputFile, jParserOutputFile);
+      string jParserArgs = $"{"\"" + jParserInputFile + "\""} {"\"" + jParserOutputFile + "\""}"; // call arguments with quotes around them
 
       // Run jParser
       Process proc = new Process();
-      proc.StartInfo.FileName = jParserLoc;
+      proc.StartInfo.FileName = jParserExePath;
       proc.StartInfo.Arguments = jParserArgs;
       proc.StartInfo.UseShellExecute = false;
       proc.StartInfo.CreateNoWindow = true;
-      proc.StartInfo.WorkingDirectory = UtilsCommon.getAppDir(true) + "JParser";
+      proc.StartInfo.WorkingDirectory = jParserDirectory;
       proc.Start();
       proc.WaitForExit(); // Blocking
 
